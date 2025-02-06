@@ -21,13 +21,14 @@ let addNewSlotsToAll = true;
 
 // which ones you want supported
 const paths = ["ger", "rus", "usa"]
-
+// const paths = ["ger", ]
+const outputPath = "sean-mods"
 // edit units
 paths.forEach((pathstr) => {
 
     // Path to the JSON file `./global/backend/meta/unitTemplate/${pathstr}.json`
     const jsonFilePath = path.join(__dirname, `./units/${pathstr}.json`);
-    const jsonFilePathOut = path.join(__dirname, `./sean-mods/global/backend/meta/unitTemplate/${pathstr}.json`);
+    const jsonFilePathOut = path.join(__dirname, `./${outputPath}/global/backend/meta/unitTemplate/${pathstr}.json`);
 
     // Read and parse the JSON file
     fs.readFile(jsonFilePath, 'utf8', (err, data) => {
@@ -128,7 +129,7 @@ paths.forEach((pathstr) => {
 
     // Path to the JSON file `./global/backend/meta/unitTemplate/${pathstr}.json`
     const jsonFilePath = path.join(__dirname, `./commander/${pathstr}.json`);
-    const jsonFilePathOut = path.join(__dirname, `./sean-mods/global/backend/meta/commanderTemplate/${pathstr}.json`);
+    const jsonFilePathOut = path.join(__dirname, `./${outputPath}/global/backend/meta/commanderTemplate/${pathstr}.json`);
 
     // Read and parse the JSON file
     fs.readFile(jsonFilePath, 'utf8', (err, data) => {
